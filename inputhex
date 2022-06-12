@@ -1,0 +1,95 @@
+add device 1: /dev/input/event6
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "msm8909-skub-snd-card Headset Jack"
+  location: "ALSA"
+  id:       ""
+  version:  1.0.1
+  events:
+    SW  (0005): 0002  0004  0006  0007  000e  000f  0010 
+  input props:
+    <none>
+add device 2: /dev/input/event5
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "msm8909-skub-snd-card Button Jack"
+  location: "ALSA"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0072  0073  00e2  0104  0105  0106  0107  0246 
+  input props:
+    INPUT_PROP_TOPBUTTONPAD
+add device 3: /dev/input/event3
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "qpnp_pon"
+  location: "qpnp_pon/input0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 006c  0074 
+  input props:
+    INPUT_PROP_TOPBUTTONPAD
+could not get driver version for /dev/input/mice, Not a typewriter
+add device 4: /dev/input/event4
+  bus:      0019
+  vendor    0001
+  product   0001
+  version   0100
+  name:     "gpio-keys"
+  location: "gpio-keys/input0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0067  0074 
+  input props:
+    <none>
+add device 5: /dev/input/event0
+  bus:      0019
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "matrix_keypad"
+  location: ""
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0002  0003  0004  0005  0006  0007  0008  0009 
+                000a  000b  0069  006a  008b  009e  00e7  0160 
+                020a  020b 
+    MSC (0004): 0004 
+  input props:
+    <none>
+add device 6: /dev/input/event2
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "hall_sensor1"
+  location: "/dev/input/hall_sensor1"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 00f9*
+  input props:
+    <none>
+add device 7: /dev/input/event1
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "hall_sensor0"
+  location: "/dev/input/hall_sensor0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 00f9 
+  input props:
+    <none>

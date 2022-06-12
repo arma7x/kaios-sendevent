@@ -1,0 +1,50 @@
+add device 1: /dev/input/event6
+  name:     "msm8909-skub-snd-card Headset Jack"
+  events:
+    SW  (0005): SW_HEADPHONE_INSERT   SW_MICROPHONE_INSERT  SW_LINEOUT_INSERT     SW_JACK_PHYSICAL_INS
+                SW_MUTE_DEVICE        SW_MAX                0010
+  input props:
+    <none>
+add device 2: /dev/input/event5
+  name:     "msm8909-skub-snd-card Button Jack"
+  events:
+    KEY (0001): KEY_VOLUMEDOWN        KEY_VOLUMEUP          KEY_MEDIA             BTN_4
+                BTN_5                 BTN_6                 BTN_7                 KEY_VOICECOMMAND
+  input props:
+    INPUT_PROP_TOPBUTTONPAD
+add device 3: /dev/input/event3
+  name:     "qpnp_pon"
+  events:
+    KEY (0001): KEY_DOWN              KEY_POWER
+  input props:
+    INPUT_PROP_TOPBUTTONPAD
+could not get driver version for /dev/input/mice, Not a typewriter
+add device 4: /dev/input/event4
+  name:     "gpio-keys"
+  events:
+    KEY (0001): KEY_UP                KEY_POWER
+  input props:
+    <none>
+add device 5: /dev/input/event0
+  name:     "matrix_keypad"
+  events:
+    KEY (0001): KEY_1                 KEY_2                 KEY_3                 KEY_4
+                KEY_5                 KEY_6                 KEY_7                 KEY_8
+                KEY_9                 KEY_0                 KEY_LEFT              KEY_RIGHT
+                KEY_MENU              KEY_BACK              KEY_SEND              KEY_OK
+                KEY_NUMERIC_STAR      KEY_NUMERIC_POUND
+    MSC (0004): MSC_SCAN
+  input props:
+    <none>
+add device 6: /dev/input/event2
+  name:     "hall_sensor1"
+  events:
+    KEY (0001): 00f9
+  input props:
+    <none>
+add device 7: /dev/input/event3
+  name:     "hall_sensor0"
+  events:
+    KEY (0001): 00f9*
+  input props:
+    <none>
