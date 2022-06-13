@@ -63,3 +63,16 @@ KEY_9:
 
 KEY_0:
  sendevent dev/input/event0 1 11 1 ; sendevent dev/input/event0 0 0 0 ;sendevent dev/input/event0 1 11 0 ;sendevent dev/input/event0 0 0 0
+
+. 1 46
+, 2 44
+? 3 63
+! 4 33
+1 5 49
+; 6 59
+: 7 58
+/ 8 47
+@ 9 64
+- 10 45
++ 11 43
+_ 12 95

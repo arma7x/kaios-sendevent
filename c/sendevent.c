@@ -6,7 +6,6 @@ void send_event(char* evt, int key) {
     char command[500];
     sprintf(command, "adb shell sendevent %s 1 %d 1 ; adb shell sendevent %s 0 0 0 ;adb shell sendevent %s 1 %d 0 ;adb shell sendevent %s 0 0 0", evt, key, evt, evt, key, evt);
     system(command);
-    // printf("%s\n\r", command);
 }
 
 void send_event_alphanumeric(char* evt, int key, int repeat) {
@@ -22,7 +21,7 @@ int main() {
     for (;;) {
         system("/bin/stty raw");
         input = getchar();
-        printf(" => %d\n\r", input);
+        //printf(" => %d\n\r", input);
         system("/bin/stty cooked");
         switch (input) {
             case 80: // Shutdown => F1
@@ -63,9 +62,6 @@ int main() {
                 break;
             case 48: // Key_0 0
                 send_event_alphanumeric("dev/input/event0", 11, 2);
-                break;
-            case 49: // Key_1 0
-                send_event_alphanumeric("dev/input/event0", 2, 5);
                 break;
             case 97: // Key_2 a
                 send_event_alphanumeric("dev/input/event0", 3, 1);
@@ -169,8 +165,47 @@ int main() {
             case 57: // Key_9 9
                 send_event_alphanumeric("dev/input/event0", 10, 5);
                 break;
+            case 42: // Key_* symbols
+                send_event("dev/input/event0", 522);
+                break;
+            case 46: // Key_1 .
+                send_event_alphanumeric("dev/input/event0", 2, 1);
+                break;
+            case 44: // Key_1 ,
+                send_event_alphanumeric("dev/input/event0", 2, 2);
+                break;
+            case 63: // Key_1 ?
+                send_event_alphanumeric("dev/input/event0", 2, 3);
+                break;
+            case 33: // Key_1 ?
+                send_event_alphanumeric("dev/input/event0", 2, 4);
+                break;
+            case 49: // Key_1 1
+                send_event_alphanumeric("dev/input/event0", 2, 5);
+                break;
+            case 59: // Key_1 ;
+                send_event_alphanumeric("dev/input/event0", 2, 6);
+                break;
+            case 58: // Key_1 :
+                send_event_alphanumeric("dev/input/event0", 2, 7);
+                break;
+            case 47: // Key_1 /
+                send_event_alphanumeric("dev/input/event0", 2, 8);
+                break;
+            case 64: // Key_1 @
+                send_event_alphanumeric("dev/input/event0", 2, 9);
+                break;
+            case 45: // Key_1 -
+                send_event_alphanumeric("dev/input/event0", 2, 10);
+                break;
+            case 43: // Key_1 +
+                send_event_alphanumeric("dev/input/event0", 2, 11);
+                break;
+            case 95: // Key_1 _
+                send_event_alphanumeric("dev/input/event0", 2, 12);
+                break;
         }
-        // printf("\33[2K\r");
+        printf("\33[2K\r");
     }
     return 0;
 }
