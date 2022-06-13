@@ -29,29 +29,29 @@ while true; do
 	fi
 	case $mode in
 		'OR') send_event "event3" "116"
-			;; # Screen ON/OFF F3
+			;; # Screen ON/OFF => F3
 		'OS')
 			evt="dev/input/event3"
 			$(adb shell sendevent $evt 1 116 108 ; adb shell sendevent $evt 0 0 0 ;adb shell sendevent $evt 1 116 103 ;adb shell sendevent $evt 0 0 0)
-			;; # Shutdown F4
+			;; # Shutdown => F4
 		'') send_event "event0" "352"
-			;; # Enter
+			;; # Enter => OK\Enter\Newline
 		'[A') send_event "event4" "103"
-			;; # Up
+			;; # Up => Arrow Up
 		'[B') send_event "event3" "108"
-			;; # Down
+			;; # Down => Arrow Down
 		'[D') send_event "event0" "105"
-			;; # Left
+			;; # Left => Arrow Left
 		'[C') send_event "event0" "106"
-			;; # Right
+			;; # Right => Arrow Right
 		'OP') send_event "event0" "139"
-			;; # SoftLeft F1
+			;; # SoftLeft => F1
 		'OQ') send_event "event0" "158"
-			;; # SoftRight F2
+			;; # SoftRight => F2
 		'[3') send_event "event4" "116"
-			;; # EndCall/Backspace Delete
+			;; # EndCall/Backspace => Delete
 		'[2') send_event "event0" "231"
-			;; # Call Insert
+			;; # Call => Insert
 		'0')
 			evt="dev/input/event0"
 			$(adb shell sendevent $evt 1 11 1 ; adb shell sendevent $evt 0 0 0 ;adb shell sendevent $evt 1 11 0 ;adb shell sendevent $evt 0 0 0)
