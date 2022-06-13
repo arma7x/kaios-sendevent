@@ -59,7 +59,7 @@ while true; do
 		'1')
 			evt="dev/input/event0"
 			$(adb shell sendevent $evt 1 2 1 ; adb shell sendevent $evt 0 0 0 ;adb shell sendevent $evt 1 2 0 ;adb shell sendevent $evt 0 0 0)
-			;; # Space or 0
+			;; # toggle Keypas 1
 		'a')
 			send_event_alphabet "event0" "3" "1"
 			;;
