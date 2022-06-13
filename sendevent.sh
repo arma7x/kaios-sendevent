@@ -15,9 +15,12 @@ while true; do
 		read -rsn2 mode # read 2 more chars
 	fi
 	case $mode in
-		'q') echo QUITTING ; exit ;;
-		'\') send_event "event3" "116"
-			;; # Power
+		'OR') send_event "event3" "116"
+			;; # Screen ON/OFF F3
+		'OS')
+			evt="dev/input/event3"
+			$(adb shell sendevent $evt 1 116 108 ; adb shell sendevent $evt 0 0 0 ;adb shell sendevent $evt 1 116 103 ;adb shell sendevent $evt 0 0 0)
+			;; # Shutdown F4
 		'') send_event "event0" "352"
 			;; # Enter
 		'[A') send_event "event4" "103"
@@ -28,14 +31,14 @@ while true; do
 			;; # Left
 		'[C') send_event "event0" "106"
 			;; # Right
-		',') send_event "event0" "139"
-			;; # SoftLeft
-		'.') send_event "event0" "158"
-			;; # SoftRight
-		'/') send_event "event4" "116"
-			;; # EndCall
-		'm') send_event "event0" "231"
-			;; # Call
+		'OP') send_event "event0" "139"
+			;; # SoftLeft F1
+		'OQ') send_event "event0" "158"
+			;; # SoftRight F2
+		'[3') send_event "event4" "116"
+			;; # EndCall Delete
+		'[2') send_event "event0" "231"
+			;; # Call Insert
 		#*) >&2 echo 'ERR bad input'; return ;;
 	esac
 done
