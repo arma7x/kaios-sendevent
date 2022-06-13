@@ -18,6 +18,7 @@ void send_event_alphanumeric(char* evt, int key, int repeat) {
 int main() {
     int input;
 
+    // https://stackoverflow.com/a/32783473
     for (;;) {
         system("/bin/stty raw");
         input = getchar();
@@ -205,6 +206,7 @@ int main() {
                 send_event_alphanumeric("dev/input/event0", 2, 12);
                 break;
         }
+        // https://stackoverflow.com/a/1508589
         printf("\33[2K\r");
     }
     return 0;
