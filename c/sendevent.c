@@ -17,13 +17,8 @@ void send_event_alphanumeric(char* evt, int key, int repeat) {
 
 int main() {
     int input;
-
-    // https://stackoverflow.com/a/32783473
-    for (;;) {
-        system("/bin/stty raw");
-        input = getchar();
-        //printf(" => %d\n\r", input);
-        system("/bin/stty cooked");
+    system ("/bin/stty raw");
+    while((input = getchar())) {
         switch (input) {
             case 80: // Shutdown => F1
                 system("adb shell sendevent dev/input/event3 1 116 108 ; adb shell sendevent dev/input/event3 0 0 0 ;adb shell sendevent dev/input/event3 1 116 103 ;adb shell sendevent dev/input/event3 0 0 0");
@@ -209,5 +204,6 @@ int main() {
         // https://stackoverflow.com/a/1508589
         printf("\33[2K\r");
     }
+    system ("/bin/stty cooked");
     return 0;
 }
